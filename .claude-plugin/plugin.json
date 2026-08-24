@@ -1,0 +1,13 @@
+{
+  "name": "sade-turkce",
+  "displayName": "Sade Türkçe",
+  "description": "Türkçe teknik metni sade ve tek anlamlı yaz: kısa cümle, emir kipi, adlaştırma yasağı, koşul önce emir sonra, TDK yazım denetimi.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Sevban Bayır"
+  },
+  "homepage": "https://github.com/sevbanbayir/SadeTurkce",
+  "repository": "https://github.com/sevbanbayir/SadeTurkce",
+  "license": "MIT",
+  "keywords": ["turkish", "turkce", "technical-writing", "documentation", "plain-language", "tdk"]
+}

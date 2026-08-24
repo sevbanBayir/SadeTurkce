@@ -1,0 +1,42 @@
+[
+  {
+    "id": "readme-giris",
+    "tur": "aciklayici",
+    "istem": "sqlpipe adlı bir komut satırı aracının README giriş bölümünü yaz. Araç, PostgreSQL tablolarını S3'e Parquet dosyası olarak kopyalar. Bir veya iki paragraf, yaklaşık 120 kelime. Yalnızca metni ver."
+  },
+  {
+    "id": "kurulum",
+    "tur": "prosedurel",
+    "istem": "sqlpipe için 'Kurulum' bölümü yaz: `curl -sSL https://get.sqlpipe.dev | sh` ile kur, `sqlpipe.yaml` dosyasını hazırla, `sqlpipe run --config sqlpipe.yaml` ile ilk çalıştırmayı yap. Yaklaşık 150 kelime. Yalnızca metni ver."
+  },
+  {
+    "id": "sorun-giderme",
+    "tur": "prosedurel",
+    "istem": "sqlpipe için sorun giderme bölümü yaz. Postgres bağlantı zaman aşımlarını ve S3 izin hatalarını kapsa. Yaklaşık 150 kelime. Yalnızca metni ver."
+  },
+  {
+    "id": "hata-mesaji",
+    "tur": "prosedurel",
+    "istem": "sqlpipe, IAM kimlik bilgilerinde `s3:PutObject` izni olmadığı için S3 yüklemesi AccessDenied ile başarısız olunca hangi hata metnini yazdırır? İki ile dört satır. Yalnızca hata metnini ver."
+  },
+  {
+    "id": "olay-raporu",
+    "tur": "aciklayici",
+    "istem": "Bir olay raporu yaz. 14:02 ile 14:31 arasında isteklerin %12'si başarısız oldu. 14:00'teki dağıtım önbellek ısıtma adımını kaldırdı. Değişiklik 14:27'de geri alındı. Yaklaşık 120 kelime. Yalnızca metni ver."
+  },
+  {
+    "id": "surum-notu",
+    "tur": "prosedurel",
+    "istem": "sqlpipe 2.0 için sürüm notu yaz. Kırıcı değişiklik: `--table` bayrağı kaldırıldı, yerine `--tables` geldi. Yeni özellik: artımlı kopyalama. Yaklaşık 120 kelime. Yalnızca metni ver."
+  },
+  {
+    "id": "mimari",
+    "tur": "aciklayici",
+    "istem": "sqlpipe'ın mimarisini anlatan bir bölüm yaz: okuyucu, dönüştürücü ve yazıcı olmak üzere üç aşamalı bir boru hattı kullanır. Yaklaşık 150 kelime. Yalnızca metni ver."
+  },
+  {
+    "id": "runbook",
+    "tur": "prosedurel",
+    "istem": "Gece yarısı çağrılan bir nöbetçi için runbook yaz: sqlpipe kuyruğu birikti, ne yapılacak? Adım adım. Yaklaşık 150 kelime. Yalnızca metni ver."
+  }
+]
