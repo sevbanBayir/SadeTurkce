@@ -3,8 +3,8 @@
 
 Düzenli ifadeyle yakalanabilen ihlalleri sayar: cümle uzunluğu, bürokratik kip,
 yasak kip, adlaştırma, yardımcı fiil yığını, ulaç zinciri, dolgu kelimeleri,
-noktalı virgül, ağır koşul kalıbı, eş anlamlı dönüşümü, hitap kipi dönüşümü ve
-kesme işareti hataları.
+noktalı virgül, uzun çizgi, ağır koşul kalıbı, eş anlamlı dönüşümü, hitap kipi
+dönüşümü ve kesme işareti hataları.
 
 Bilinen tavan: bu bir düzenli ifade taramasıdır, dil bilgisi çözümleyicisi
 değildir. Eksik sayar (biçim bilgisi çözümlemesi yok) ve bazı örtüşen kalıpları
@@ -88,6 +88,7 @@ AGIR_KOSUL = re.compile(r"\b(?:durumunda|hâlinde|halinde|takdirde)\b")
 INGILIZCE_FIIL = re.compile(
     r"\b(?:implemente|handle|check|deploy|optimize|refactor|debug|trigger|"
     r"fetch|render|validate|update)\s+(?:et|ed)\w*")
+UZUN_CIZGI = re.compile(r"[—–]")  # Kural 8.7
 SONDAKI_KOSUL = re.compile(
     r",\s*(?:eğer\s+)?[^,]*?\w(?:ursa|ürse|ırsa|irse|arsa|erse)\b[^.!?]*[.!?]?$")
 
@@ -155,6 +156,7 @@ def denetle(metin, tur):
     s["adlastirma"] = _say(ADLASTIRMA, govde)
     s["bir_sekilde"] = _say(BIR_SEKILDE, govde)
     s["noktali_virgul"] = govde.count(";")
+    s["uzun_cizgi"] = _say(UZUN_CIZGI, govde)
     s["kisaltma_dolgu"] = _say(KISALTMA_DOLGU, govde)
     s["ve_veya"] = _say(VE_VEYA, govde)
     s["dolgu"] = _say(DOLGU, govde)
@@ -214,7 +216,7 @@ işleminin, taahhüt veya gecikme durumunun kontrol edilmesi sonrasında
 gerçekleştirilmesi gerekmektedir. Bu bağlamda ilgili denetimin APIdan dönen yanıt
 üzerinden yapılması kritik öneme sahip olup, hata olması durumunda kullanıcıların
 hatalı bir şekilde iptal işlemini tamamlayabilmesi söz konusu olabilmektedir.
-Yapılandırma dosyası ekip tarafından kontrol edilerek doğrulanarak yüklenmiştir;
+Yapılandırma dosyası — ekip tarafından — kontrol edilerek doğrulanarak yüklenmiştir;
 bu ayarlar zaman aşımı vb. değerleri içermektedir. Servisin deploy edilmesi ve
 kayıtların silinmesi sağlanmalıdır. Sistem, kullanıcılara geniş bir esneklik
 olanağı tanımaktadır ve/veya yeni seçenekler sunar."""
@@ -233,7 +235,7 @@ def oz_test():
     beklenen = [
         "cumle_uzun", "burokratik_kip", "yasak_kip", "mistir_kalibi",
         "edilgen_ozne", "yardimci_fiil", "adlastirma", "bir_sekilde",
-        "noktali_virgul", "kisaltma_dolgu", "ve_veya", "dolgu",
+        "noktali_virgul", "uzun_cizgi", "kisaltma_dolgu", "ve_veya", "dolgu",
         "olanak_kalibi", "agir_kosul", "ingilizce_fiil", "ulac_zinciri",
         "es_anlamli_rotasyon", "kesme_hatasi",
     ]

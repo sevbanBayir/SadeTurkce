@@ -14,7 +14,7 @@ python3 evals/sade_lint.py --oz-test
 
 Çıktı JSON'dur. `ihlal_100_kelime` alanı, iki metni karşılaştırmak için kullanılır.
 
-### Saydığı 20 kural
+### Saydığı 21 kural
 
 | Anahtar | Kural | Yakalar |
 |---|---|---|
@@ -28,6 +28,7 @@ python3 evals/sade_lint.py --oz-test
 | `bir_sekilde` | Şişkinlik | `bir şekilde`, `bir biçimde` |
 | `ulac_zinciri` | 3.5 | Bir cümlede birden çok `-arak/-erek` |
 | `noktali_virgul` | 8.1 | `;` |
+| `uzun_cizgi` | 8.7 | `—`, `–` |
 | `kisaltma_dolgu` | GR | `vb.`, `vs.`, `örn.` |
 | `ve_veya` | Şişkinlik | `ve/veya` |
 | `dolgu` | Şişkinlik | 25 kalıp: `oldukça`, `kritik önem`, `bu bağlamda` … |
@@ -87,4 +88,4 @@ Sonuçları buraya eklerken şunları yaz: model kimliği, tarih, senaryo başı
 python3 evals/test_sade_lint.py
 ```
 
-35 kural bazlı test. Her kuralın hem yakalayan hem yakalamayan örneği vardır.
+38 kural bazlı test. Her kuralın hem yakalayan hem yakalamayan örneği vardır.

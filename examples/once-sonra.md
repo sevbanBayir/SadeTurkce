@@ -14,7 +14,7 @@ Sol sütun tipik yapay zekâ Türkçesidir. Sağ sütun aynı olguları taşıya
 
 > sqlpipe, PostgreSQL tablolarını S3'e Parquet dosyası olarak kopyalar. Tek bir yapılandırma dosyası ister. Bir tabloyu tam olarak ya da yalnızca değişen satırlarıyla kopyalayabilirsiniz.
 
-Kurallar: 3.2 (`-mekte` → `-ır`), 1.4 (`olanak tanıyan` → `-ebilirsiniz`), 6.2 (16 kelime sınırı), şişkinlik sözlüğü (`yüksek performanslı`, `kapsamlı`, `sağlam`, `sorunsuz bir şekilde` silindi). Kaynakta ölçüm yoktu, bu yüzden performans savı da silindi — uydurulmadı.
+Kurallar: 3.2 (`-mekte` → `-ır`), 1.4 (`olanak tanıyan` → `-ebilirsiniz`), 6.2 (16 kelime sınırı), şişkinlik sözlüğü (`yüksek performanslı`, `kapsamlı`, `sağlam`, `sorunsuz bir şekilde` silindi). Kaynakta ölçüm yoktu, bu yüzden performans savı da silindi. Uydurulmadı.
 
 ---
 

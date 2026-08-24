@@ -17,6 +17,7 @@ Taslakta her kalıbı ara. Kod bloğu ve alıntı dışındaki her eşleşme bir
 | `bir şekilde`, `bir biçimde` | Dolgu | Zarf: "hızlı bir şekilde" → "hızlıca" |
 | `arak `, `erek `, `ıp `, `ip ` | Ulaç zinciri (3.5) | Bir cümlede birden çoksa böl. |
 | `;` | Noktalı virgül (8.1) | İki cümle yaz. |
+| `—`, `–` | Uzun ve orta çizgi (8.7) | Virgül, parantez ya da yeni cümle. |
 | `vb.`, `vs.`, `örn.` | Kısaltma dolgusu | Adlarını yaz, "örneğin" |
 | `ve/veya` | Belirsizlik | Birini seç. |
 | `oldukça`, `son derece`, `bir hayli` | Dolgu | Sil. |

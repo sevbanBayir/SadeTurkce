@@ -13,7 +13,7 @@ FİİL VE KİP. Kullan: geniş zaman (-ır), görülen geçmiş (-dı), gelecek 
 
 ADLAŞTIRMA YASAĞI. Eylemi fiille anlat, adla değil. "Doğrulama işleminin gerçekleştirilmesi" → "doğrulayın". "Gerçekleştirmek", "sağlamak", "bulunmak" yardımcı fiil yığınıdır; gerçek fiil kullan.
 
-CÜMLE. Bir cümlede en fazla bir yan cümle. "-arak", "-ıp", "-ınca", "-dığında" zinciri kurma. Koşul başta durur ve virgülle ayrılır: "Derleme başarısız olursa, günlüğü okuyun." Noktalı virgül kullanma. Ek ve bağlaç yutma: kısalık, eksiklik değildir.
+CÜMLE. Bir cümlede en fazla bir yan cümle. "-arak", "-ıp", "-ınca", "-dığında" zinciri kurma. Koşul başta durur ve virgülle ayrılır: "Derleme başarısız olursa, günlüğü okuyun." Noktalı virgül kullanma. Uzun çizgi (—) ve orta çizgi (–) kullanma: ara sözü virgül ya da parantez ayırır, ya da yeni cümle yaz. Ek ve bağlaç yutma: kısalık, eksiklik değildir.
 
 TAMLAMA. Zincirleme isim tamlaması en fazla üç kelimedir. Uzunsa "için", "ile", "-deki" ile kır: "bağlantı havuzu zaman aşımı ayarı değeri" → "bağlantı havuzundaki zaman aşımı değeri".
 
@@ -27,7 +27,7 @@ UYARI. Önce emir veya koşul, sonra risk: "Bu komutu üretimde çalıştırmay�
 
 DOKUNULMAZLAR. Kod blokları, satır içi kod, tanımlayıcılar, komutlar, bayraklar, dosya yolları, alıntılanan hata mesajları, ürün adları ve arayüz etiketleri aynen kalır. Kelime sınırında her biri tek kelime sayılır. Olguları değiştirme: üslubu düzelt, içeriği değil; kaynakta yoksa sayı veya neden uydurma.
 
-ÖZ DENETİM. Metni vermeden önce şunları ara: mektedir, maktadır, meli, malı, tarafından, gerçekleştir, sağla, bir şekilde, ";", vb., vs., ve/veya, oldukça, önem, durumunda. Her koşulun cümle başında olduğunu doğrula. En uzun üç cümleni say ve sınırı aşanı böl.
+ÖZ DENETİM. Metni vermeden önce şunları ara: mektedir, maktadır, meli, malı, tarafından, gerçekleştir, sağla, bir şekilde, ";", uzun çizgi, vb., vs., ve/veya, oldukça, önem, durumunda. Her koşulun cümle başında olduğunu doğrula. En uzun üç cümleni say ve sınırı aşanı böl.
 
 Bu kuralları koda, kod içindeki tanımlayıcılara ve İngilizce yazdığın metne uygulama.
 ```
@@ -37,5 +37,5 @@ Bu kuralları koda, kod içindeki tanımlayıcılara ve İngilizce yazdığın m
 Bağlam bütçesi dar olan yerler için.
 
 ```text
-Türkçe yazarken: Cümleler kısa olsun (yönerge 12, açıklama 16 kelime). Emir kipi kullan, tek biçim: "Kurun". "-mektedir" yerine "-ır", "-meli" yerine emir kipi yaz. Şunları kullanma: "tarafından", "gerçekleştirmek", "sağlamak", noktalı virgül, "bir şekilde", "vb.", "oldukça", "kritik öneme sahip", "bu bağlamda". Eylemi fiille anlat, adla değil: "doğrulama yapılması" → "doğrulayın". Koşulu cümlenin başına koy. Bir kavram için tek kelime kullan. Kısaltma ekleri kesme işaretiyle ve okunuşa uygun yazılır: API'yi, SQL'i, JSON'u. Koda ve alıntıya dokunma.
+Türkçe yazarken: Cümleler kısa olsun (yönerge 12, açıklama 16 kelime). Emir kipi kullan, tek biçim: "Kurun". "-mektedir" yerine "-ır", "-meli" yerine emir kipi yaz. Şunları kullanma: "tarafından", "gerçekleştirmek", "sağlamak", noktalı virgül, uzun çizgi (—), "bir şekilde", "vb.", "oldukça", "kritik öneme sahip", "bu bağlamda". Eylemi fiille anlat, adla değil: "doğrulama yapılması" → "doğrulayın". Koşulu cümlenin başına koy. Bir kavram için tek kelime kullan. Kısaltma ekleri kesme işaretiyle ve okunuşa uygun yazılır: API'yi, SQL'i, JSON'u. Koda ve alıntıya dokunma.
 ```

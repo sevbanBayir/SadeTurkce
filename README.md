@@ -63,6 +63,7 @@ Output style'ı açmak için `~/.claude/settings.json` dosyasına şunu yaz:
 | Koşul cümlenin başında | Okurun geç fark ettiği "… olması durumunda" |
 | Bir kavram, bir kelime | ayar/yapılandırma/konfigürasyon kumarı |
 | Kesme işareti okunuşa uyar | `APIyi`, `API'ı`, `SQL'yi` |
+| Uzun çizgi yasağı | İngilizceden geçen ara söz çizgisi |
 
 Tam katalog: [`skills/sade-turkce/SKILL.md`](skills/sade-turkce/SKILL.md). Denetim listesi: [`references/kontrol-listesi.md`](skills/sade-turkce/references/kontrol-listesi.md).
 
@@ -76,7 +77,7 @@ Gitmediği yer: edebî metin, tanıtım metni, marka dili. Kurallar ikna dilini 
 
 ## Denetleyici
 
-`sade_lint.py`, kuralların düzenli ifadeyle yakalanabilen 20 tanesini sayar.
+`sade_lint.py`, kuralların düzenli ifadeyle yakalanabilen 21 tanesini sayar.
 
 ```bash
 python3 evals/sade_lint.py --tur prosedurel dosya.md

@@ -58,7 +58,7 @@ Metni yazmak yerine **denetlemen** istendiğinde her ihlali şu biçimde bildir:
 
 ## KURAL KATALOĞU
 
-### Bölüm 1 — Kelimeler
+### Bölüm 1. Kelimeler
 
 | Kural | Yönerge |
 |---|---|
@@ -77,7 +77,7 @@ Metni yazmak yerine **denetlemen** istendiğinde her ihlali şu biçimde bildir:
 **Önce:** Servisin deploy edilmesi ve konfigürasyonun handle edilmesi gerekmektedir.
 **Sonra:** Servisi yayına alın. Sonra ayarları işleyin.
 
-### Bölüm 2 — Tamlamalar
+### Bölüm 2. Tamlamalar
 
 Zincirleme isim tamlaması, Türkçenin en tehlikeli yapısıdır. Her ek bir anlam katmanı ekler ve okur hangi kelimenin hangisine bağlandığını kaybeder.
 
@@ -93,7 +93,7 @@ Zincirleme isim tamlaması, Türkçenin en tehlikeli yapısıdır. Her ek bir an
 **Önce:** kullanıcı oturum bilgileri saklama süresi sınırı
 **Sonra:** oturum bilgileri için saklama süresi
 
-### Bölüm 3 — Fiiller ve Kipler
+### Bölüm 3. Fiiller ve Kipler
 
 | Kural | Yönerge |
 |---|---|
@@ -120,7 +120,7 @@ Zincirleme isim tamlaması, Türkçenin en tehlikeli yapısıdır. Her ek bir an
 **Önce:** Yapılandırmayı okuyarak doğrulayıp önbelleğe alarak servisi başlatır.
 **Sonra:** Yapılandırmayı okur. Doğrular ve önbelleğe alır. Sonra servisi başlatır.
 
-### Bölüm 4 — Cümle
+### Bölüm 4. Cümle
 
 | Kural | Yönerge |
 |---|---|
@@ -131,7 +131,7 @@ Zincirleme isim tamlaması, Türkçenin en tehlikeli yapısıdır. Her ek bir an
 | 4.5 | Noktalı virgül kullanma. İki cümle yaz. |
 | 4.6 | İkiden çok öge varsa madde listesi kullan. |
 
-**Kural 4.6 — liste kuralları:**
+**Kural 4.6, liste kuralları:**
 
 - Giriş cümlesi iki nokta ile biter.
 - Her madde büyük harfle başlar.
@@ -142,7 +142,7 @@ Zincirleme isim tamlaması, Türkçenin en tehlikeli yapısıdır. Her ek bir an
 
 Kural 4.2, kısalık ile eksiklik arasındaki farktır. Sade Türkçe kısa cümledir, telgraf değildir. Ekler ve bağlaçlar yerinde kalır.
 
-### Bölüm 5 — Prosedürel Yazım
+### Bölüm 5. Prosedürel Yazım
 
 | Kural | Yönerge |
 |---|---|
@@ -157,7 +157,7 @@ Kural 4.2, kısalık ile eksiklik arasındaki farktır. Sade Türkçe kısa cüm
 **Önce:** Client'ı configure etmeden önce dashboard üzerinden API anahtarınızı almanız gerekmektedir ki bu işlemi Ayarlar bölümünden gerçekleştirebilirsiniz.
 **Sonra:** API anahtarını panelden alın. Anahtar, **Ayarlar** bölümündedir. Sonra istemciyi bu anahtarla yapılandırın.
 
-### Bölüm 6 — Açıklayıcı Yazım
+### Bölüm 6. Açıklayıcı Yazım
 
 | Kural | Yönerge |
 |---|---|
@@ -169,7 +169,7 @@ Kural 4.2, kısalık ile eksiklik arasındaki farktır. Sade Türkçe kısa cüm
 
 Açıklama anlatır. Prosedür yönlendirir. İkisi karışmaz.
 
-### Bölüm 7 — Uyarılar
+### Bölüm 7. Uyarılar
 
 | Kural | Yönerge |
 |---|---|
@@ -182,7 +182,7 @@ Açıklama anlatır. Prosedür yönlendirir. İkisi karışmaz.
 **Önce:** Üretim ortamında zorlama bayrağının etkin olması durumunda bazı koşullarda veri kaybı yaşanabileceği unutulmamalıdır.
 **Sonra:** DİKKAT: `--force` bayrağını üretim ortamında kullanmayın. Bu bayrak, kaynakla eşleşmeyen satırları siler.
 
-### Bölüm 8 — Noktalama ve Kelime Sayımı
+### Bölüm 8. Noktalama ve Kelime Sayımı
 
 | Kural | Yönerge |
 |---|---|
@@ -192,10 +192,16 @@ Açıklama anlatır. Prosedür yönlendirir. İkisi karışmaz.
 | 8.4 | Kısaltma ve özel ad tek kelime sayılır. |
 | 8.5 | Parantez içindeki metin tek kelime sayılır. |
 | 8.6 | Listede giriş cümlesi iki nokta ile biter. Her madde kendi kelime bütçesine sahiptir. |
+| 8.7 | Uzun çizgi (—) ve orta çizgi (–) kullanma. |
 
-Kural 8.2 yazılım metinleri için önemlidir. `./gradlew :app:assembleDebug` tek kelime sayılır. Uzun komutlar cümle bütçeni bitirmez.
+Kural 8.2 yazılım metinlerinde işe yarar. `./gradlew :app:assembleDebug` tek kelime sayılır. Uzun komutlar cümle bütçeni bitirmez.
 
-### Bölüm 9 — Türkçe Yazım Denetimi
+Kural 8.7, İngilizceden geçen bir alışkanlığı keser. TDK'ya göre uzun çizgi satır başında konuşmayı gösterir. Cümle ortasında ara söz yapmaz. Türkçede ara sözü virgül ya da parantez ayırır.
+
+**Önce:** Yapılandırma dosyası — varsayılan adı `sqlpipe.yaml` — kök dizinde durur.
+**Sonra:** Yapılandırma dosyası kök dizinde durur. Varsayılan adı `sqlpipe.yaml`.
+
+### Bölüm 9. Türkçe Yazım Denetimi
 
 Bu bölümün İngilizce karşılığı yoktur. Kurallar TDK Yazım Kuralları'na dayanır ve makineyle aranabilir.
 
@@ -210,11 +216,11 @@ Bu bölümün İngilizce karşılığı yoktur. Kurallar TDK Yazım Kuralları'n
 | 9.7 | Düzeltme işaretini anlam ayırdığında kullan: "kâr", "hâlâ", "âdet". |
 
 **Kural 9.1 testi:** Kelimeyi cümleden atabiliyorsan bağlaçtır, ayrı yaz.
-"Bu ayar da geçerlidir." (bağlaç, ayrı) — "Bu ayarda hata var." (hâl eki, bitişik)
+"Bu ayar da geçerlidir." (bağlaç, ayrı). "Bu ayarda hata var." (hâl eki, bitişik).
 
 **Kural 9.2 istisnaları** bitişik yazılır: "oysaki", "mademki", "hâlbuki", "sanki", "çünkü", "belki", "meğerki".
 
-**Kural 9.4 — kısaltmalarda ek uyumu.** Ek, kısaltmanın **okunuşuna** göre seçilir. Yazılım metinlerinin en sık hatası budur:
+**Kural 9.4, kısaltmalarda ek uyumu.** Ek, kısaltmanın **okunuşuna** göre seçilir. Yazılım metinlerinin en sık hatası budur:
 
 | Doğru | Okunuş | Yanlış |
 |---|---|---|
@@ -232,7 +238,7 @@ Kod adları okunduğu gibi ek alır: `Docker'ı`, `Kotlin'de`, `Gradle'ı`, `Com
 
 Yapım eki kesme ile ayrılmaz: "Türkçeleştirmek", "Googlelamak" değil "Google'da aramak".
 
-### Bölüm 10 — Tutarlılık
+### Bölüm 10. Tutarlılık
 
 | Kural | Yönerge |
 |---|---|
@@ -267,7 +273,7 @@ Bu tablo, yapay zekâ Türkçesinin ve kurum yazışma dilinin tipik kalıpları
 | gerçekleştirmek | Gerçek fiil: "kurulum gerçekleştir" → "kur" |
 | sağlamak (yardımcı) | Gerçek fiil: "erişim sağlamak" → "erişmek" |
 | -e olanak tanır, imkân sağlar, imkân verir | "-ebilirsiniz" |
-| kritik öneme sahiptir, büyük önem taşır, önemlidir | (sil — olguyu yaz) |
+| kritik öneme sahiptir, büyük önem taşır, önemlidir | (sil, olguyu yaz) |
 | unutulmamalıdır ki, belirtmek gerekir ki | (sil) |
 | dikkat çekicidir, göze çarpmaktadır | (sil) |
 | bu bağlamda, bu doğrultuda, bu noktada, bu kapsamda | (sil) |
@@ -276,13 +282,13 @@ Bu tablo, yapay zekâ Türkçesinin ve kurum yazışma dilinin tipik kalıpları
 | oldukça, son derece, bir hayli, epeyce | (sil) |
 | kolayca, zahmetsizce, sorunsuz bir şekilde | (sil) |
 | kapsamlı, güçlü, sağlam, esnek, yüksek performanslı | (sil, ya da ölçülebilir değeri yaz) |
-| başarılı bir şekilde | (sil — "başarıyla tamamlandı" → "tamamlandı") |
+| başarılı bir şekilde | (sil, "başarıyla tamamlandı" → "tamamlandı") |
 | hayata geçirmek | uygulamak, yapmak |
 | ele almak | incelemek, düzeltmek |
 | göz atmak | okumak |
 | ihtiyaç duymaktadır | gerekir |
 | yer almaktadır, bulunmaktadır | vardır, ya da (sil) |
-| amaçlamaktadır, hedeflemektedir | (sil — ne yaptığını yaz) |
+| amaçlamaktadır, hedeflemektedir | (sil, ne yaptığını yaz) |
 | -den dolayı, -den kaynaklı olarak | çünkü |
 | gerekli olması durumunda, ihtiyaç hâlinde | gerekirse |
 | ... olması durumunda | -se: "hata olması durumunda" → "hata olursa" |
@@ -303,7 +309,7 @@ Bu tablo, yapay zekâ Türkçesinin ve kurum yazışma dilinin tipik kalıpları
 
 Belgenin tamamında her kavram için tek kelime kullan (Kurallar 1.1, 10.2).
 
-| Kavram | Seçenekler — birini seç |
+| Kavram | Seçenekler, birini seç |
 |---|---|
 | ayar | ayar / yapılandırma / konfigürasyon / seçenek |
 | doğrulama | doğrula / kontrol et / denetle / teyit et / emin ol |
@@ -345,7 +351,7 @@ Aynı kurallar, farklı hedefler. Uzun uyarlamalar `references/kullanim-alanlari
 Bu adım isteğe bağlı değildir. Taslağını şu sekiz denetimden geçir:
 
 1. En uzun üç cümleni say. 12 veya 16 sınırını aşanı böl.
-2. Şunları ara: `mektedir`, `maktadır`, `meli`, `malı`, `tarafından`, `gerçekleştir`, `sağla`, `bir şekilde`, `bir biçimde`, `;`, `vb.`, `vs.`, `ve/veya`, `oldukça`, `önem`.
+2. Şunları ara: `mektedir`, `maktadır`, `meli`, `malı`, `tarafından`, `gerçekleştir`, `sağla`, `bir şekilde`, `bir biçimde`, `;`, `vb.`, `vs.`, `ve/veya`, `oldukça`, `önem`, `—`, `–`.
 3. Her `-se`, `-sa`, `-ursa` ve `durumunda` için: koşul cümlenin başında mı?
 4. `-arak`, `-erek`, `-ıp`, `-ip` ara. Bir cümlede birden çoksa cümleyi böl.
 5. Hitap kipini say. "-ın" mı, "-ınız" mı, "-malısınız" mı? Tek olmalı.
@@ -379,5 +385,5 @@ Bu beceri resmî değildir. TDK Yazım Kuralları yazım konusunda tek yetkili k
 
 ## Referanslar
 
-- `references/kontrol-listesi.md` — aranabilir kalıplarla tam denetim listesi
-- `references/kullanim-alanlari.md` — hata mesajı, runbook, olay raporu, commit, arayüz metni uyarlamaları
+- `references/kontrol-listesi.md`: aranabilir kalıplarla tam denetim listesi
+- `references/kullanim-alanlari.md`: hata mesajı, runbook, olay raporu, commit, arayüz metni uyarlamaları
