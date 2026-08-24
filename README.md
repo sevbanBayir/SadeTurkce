@@ -170,7 +170,7 @@ Denetleyiciyi bu README'nin üstünde çalıştırdım. Alıntıladığım köt�
 grep -v '^>' README.md | python3 evals/sade_lint.py --tur aciklayici -
 ```
 
-Kendi düzyazımda 930 kelimede 18 ihlal kaldı, yani 100 kelimede 1.94. En uzun cümle 15 kelime. Kalanların çoğu kaçınılmazdır: `-mektedir` yasağını anlatmak için `-mektedir` yazmak gerekir. Bir tanesi de yanlış pozitiftir. Denetleyici, "Türkçe eklemeli bir dildir" cümlesindeki `eklemeli` kelimesini yasak kip sanır. Dil bilimi terimini `-meli` ekinden ayıramaz.
+Kendi düzyazımda 988 kelimede 19 ihlal kaldı, yani 100 kelimede 1.92. En uzun cümle 15 kelime. Kalanların çoğu kaçınılmazdır: `-mektedir` yasağını anlatmak için `-mektedir` yazmak gerekir. Bir tanesi de yanlış pozitiftir. Denetleyici, "Türkçe eklemeli bir dildir" cümlesindeki `eklemeli` kelimesini yasak kip sanır. Dil bilimi terimini `-meli` ekinden ayıramaz.
 
 ## Lisans ve atıf
 
