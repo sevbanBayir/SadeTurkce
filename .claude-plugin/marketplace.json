@@ -2,7 +2,7 @@
   "name": "sade-turkce",
   "owner": {
     "name": "Sevban Bayır",
-    "url": "https://github.com/sevbanbayir"
+    "url": "https://github.com/sevbanBayir"
   },
   "description": "Türkçe teknik yazım için sade dil becerisi: kısa cümle, tek kavram tek kelime, emir kipi, TDK yazım denetimi.",
   "plugins": [
@@ -15,8 +15,8 @@
       "author": {
         "name": "Sevban Bayır"
       },
-      "homepage": "https://github.com/sevbanbayir/SadeTurkce",
-      "repository": "https://github.com/sevbanbayir/SadeTurkce",
+      "homepage": "https://github.com/sevbanBayir/SadeTurkce",
+      "repository": "https://github.com/sevbanBayir/SadeTurkce",
       "license": "MIT",
       "keywords": ["turkish", "turkce", "technical-writing", "documentation", "plain-language", "tdk"]
     }

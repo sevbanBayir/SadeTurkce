@@ -23,7 +23,7 @@ Altı tam örnek: [`examples/once-sonra.md`](examples/once-sonra.md).
 **Claude Code eklentisi.** Bu depo aynı zamanda bir eklenti pazarıdır.
 
 ```bash
-claude plugin marketplace add <kullanıcı>/SadeTurkce && claude plugin install sade-turkce@sade-turkce
+claude plugin marketplace add sevbanBayir/SadeTurkce && claude plugin install sade-turkce@sade-turkce
 ```
 
 **Elle kopyalama.** Depoyu klonlayın, sonra iki klasörü kopyalayın.
