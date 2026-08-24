@@ -1,96 +1,158 @@
 # Önce / sonra
 
-Sol sütun tipik yapay zekâ Türkçesidir. Sağ sütun aynı olguları taşıyan sade sürümdür. Her örneğin altında hangi kuralın işlediği yazar.
+Sol taraf, bir modelin Türkçe çalışırken gerçekten ürettiği metin tipidir. Sağ taraf aynı olguları taşır. Her örneğin altında hangi kuralın işlediği ve neyin kazanıldığı yazar.
+
+Örnekler bir Android projesinden alınmıştır: Kotlin, Compose, özellik modülleri.
 
 ---
 
-## 1. README girişi (açıklayıcı)
+## 1. Ajanın değişiklik özeti (açıklayıcı)
+
+Bir ajanın en sık ürettiği metin budur: "ne yaptım" özeti.
 
 **Önce**
 
-> sqlpipe, PostgreSQL tablolarınızı S3'e Parquet formatında senkronize etmenize olanak tanıyan, yüksek performanslı ve kapsamlı bir komut satırı aracıdır. Sağlam mimarisi sayesinde büyük veri setlerini sorunsuz bir şekilde işleyebilmekte, minimum konfigürasyon ile hızlı bir şekilde devreye alınabilmektedir.
-
-**Sonra**
-
-> sqlpipe, PostgreSQL tablolarını S3'e Parquet dosyası olarak kopyalar. Tek bir yapılandırma dosyası ister. Bir tabloyu tam olarak ya da yalnızca değişen satırlarıyla kopyalayabilirsiniz.
-
-Kurallar: 3.2 (`-mekte` → `-ır`), 1.4 (`olanak tanıyan` → `-ebilirsiniz`), 6.2 (16 kelime sınırı), şişkinlik sözlüğü (`yüksek performanslı`, `kapsamlı`, `sağlam`, `sorunsuz bir şekilde` silindi). Kaynakta ölçüm yoktu, bu yüzden performans savı da silindi. Uydurulmadı.
-
----
-
-## 2. Kurulum (prosedürel)
-
-**Önce**
-
-> Kuruluma başlamadan önce sisteminizde Go 1.21 veya üzeri bir sürümün kurulu olduğundan emin olunması gerekmektedir. Daha sonra aşağıdaki komutu çalıştırarak binary'yi indirebilir ve PATH'inize ekleyerek kullanıma hazır hale getirebilirsiniz.
-
-**Sonra**
-
-> Go sürümünüzü doğrulayın. sqlpipe en az Go 1.21 ister.
+> Talebiniz doğrultusunda abonelik iptal akışındaki dialogların gösterilmemesi sorununu inceledim ve gerekli düzenlemeleri gerçekleştirdim.
 >
-> 1. Kurulum betiğini çalıştırın: `curl -sSL https://get.sqlpipe.dev | sh`
-> 2. Betik, çalıştırılabilir dosyayı `/usr/local/bin` dizinine koyar.
-> 3. Kurulumu doğrulayın: `sqlpipe version`
-
-Kurallar: 5.1 (bir cümle bir işlem), 5.2 (emir kipi), 1.8 (`emin olunması gerekmektedir` → `doğrulayın`), 3.5 (`çalıştırarak` ve `ekleyerek` ulaç zinciri bölündü), 10.1 (tek hitap kipi).
-
----
-
-## 3. Hata mesajı
-
-**Önce**
-
-> Hata: Bir sorun oluştu. Lütfen bağlantı ayarlarınızı kontrol ettikten sonra tekrar deneyiniz. Sorunun devam etmesi durumunda sistem yöneticiniz ile iletişime geçmeniz gerekmektedir.
-
-**Sonra**
-
-> Hata: S3 yüklemesi reddedildi. `sqlpipe-prod` kullanıcısında `s3:PutObject` izni yok.
-> İzni IAM politikasına ekleyin, sonra komutu yeniden çalıştırın.
-
-Kurallar: hata mesajı kalıbı (ne oldu → neden → ne yapılacak), 10.1 (`deneyiniz` ile `geçmeniz` dönüşümü kalktı), şişkinlik (`Bir sorun oluştu` hiçbir olgu taşımaz).
-
----
-
-## 4. Olay raporu
-
-**Önce**
-
-> Bazı kullanıcılarımızın hizmete erişiminde yaşanabilecek bir sorun tespit edilmiş olup, ekiplerimiz tarafından konu ile ilgili gerekli çalışmalar başlatılmıştır. Yaşanan mağduriyetten dolayı özür dileriz.
-
-**Sonra**
-
-> 14:02 ile 14:31 arasında isteklerin %12'si başarısız oldu. 14:00'teki dağıtım, önbellek ısıtma adımını kaldırdı. Değişikliği 14:27'de geri aldık. Dağıtım denetimine önbellek testi ekledik.
-
-Kurallar: 3.8 (`başlatılmıştır` → `ekledik`), 3.4 (`tarafından` silindi), 3.3 (edilgen çatı etken oldu), şişkinlik (`ilgili`, `gerekli`). Sayılar kaynaktan gelir; kaynakta yoksa uydurulmaz.
-
----
-
-## 5. Sürüm notu (kırıcı değişiklik)
-
-**Önce**
-
-> Bu sürümde API katmanında gerçekleştirilen iyileştirmeler kapsamında bazı endpoint'lerin davranışlarında değişiklikler yapılmış olup, kullanıcıların ilgili entegrasyonlarını gözden geçirmeleri tavsiye edilmektedir.
-
-**Sonra**
-
-> DİKKAT: `/v1/users` uç noktası artık `email` alanını döndürmez. `/v2/users` uç noktasına geçin. Eski uç nokta 1 Mart 2027'de kapanır.
-
-Kurallar: 7.1 (risk düzeyi adlandırıldı), 7.2 ve 7.3 (önce emir, sonra risk), 1.4 (`gerçekleştirilen` silindi), 3.2 (`tavsiye edilmektedir` → emir kipi).
-
----
-
-## 6. Commit mesajı ve PR açıklaması
-
-**Önce**
-
-> refactor: kod kalitesinin artırılması ve bazı iyileştirmelerin yapılması
+> Öncelikle `SubscriptionManagementViewModel` sınıfında yer alan `onCancelClicked` metodunun, taahhüt ve gecikme kontrollerini yapmadan doğrudan iptal akışını tetiklediği tespit edilmiştir. Bu durum, kullanıcıların taahhüt bilgisi olmadan iptal işlemini tamamlayabilmelerine sebep olmaktaydı.
 >
-> Bu PR kapsamında, mevcut yapıda bulunan bazı sorunların giderilmesi ve kod okunabilirliğinin artırılması amacıyla çeşitli düzenlemeler gerçekleştirilmiştir.
+> Yapılan düzenlemeler kapsamında; ilgili kontrollerin repository katmanından dönen response üzerinden yapılması sağlanmış, ayrıca `SubscriptionManagementRefundContract` içerisine yeni stateler eklenerek dialog yönetiminin merkezi bir şekilde handle edilmesi mümkün hale getirilmiştir.
+>
+> Bu değişiklikler ile birlikte kod okunabilirliği artırılmış ve kullanıcı deneyimi iyileştirilmiştir. Herhangi bir sorunuz olması durumunda yardımcı olmaktan memnuniyet duyarım.
 
 **Sonra**
 
-> fix: oturum yenilemesindeki bellek sızıntısını gider
+> İptal akışında uyarı kutuları görünmedi. Nedenini buldum ve düzelttim.
 >
-> `TokenRefresher`, her yenilemede yeni bir `Timer` üretti ve eskisini iptal etmedi. Bellek 24 saatte 40 MB büyüdü. Yenilemeden önce eski zamanlayıcıyı iptal ettim.
+> `SubscriptionManagementViewModel.onCancelClicked`, taahhüt ve gecikme denetimini atladı. Doğrudan iptal akışını başlattı. Bu yüzden kullanıcı, taahhüdünü görmeden iptali tamamladı.
+>
+> Üç dosyayı değiştirdim:
+>
+> - `SubscriptionManagementViewModel`: denetimi, depo katmanının döndüğü yanıttan okur.
+> - `SubscriptionManagementRefundContract`: iki yeni durum aldı.
+> - `DomainErrorExtensions`: iki hata metnini güncelledim.
+>
+> Testleri çalıştırdım. Hepsi geçti.
 
-Kurallar: 1.8 (`artırılması`, `giderilmesi`, `yapılması` fiile döndü), 3.8 (`gerçekleştirilmiştir` → `ettim`), 6.1 (cümle başına bir yeni bilgi). Başlık neyin değiştiğini söyler.
+Kurallar: 1.8 (`yapılması sağlanmış` fiile döndü), 3.2 (`olmaktaydı` → `tamamladı`), 3.8 (`tespit edilmiştir` → `atladı`), 4.1, 8.1 (noktalı virgül), 9.4 (`dialogların` → `uyarı kutuları`).
+
+Kazanılan: son paragraf tamamen silindi. "Kod okunabilirliği artırılmış ve kullanıcı deneyimi iyileştirilmiştir" cümlesi hiçbir olgu taşımaz. Yerine ölçülebilir bir sonuç geldi: testler geçti.
+
+---
+
+## 2. Ajan yönergesi, `AGENTS.md` veya `CLAUDE.md` (prosedürel)
+
+Bu, kuralların en çok işe yaradığı yerdir. Model "-meli" ekini isteğe bağlı okur.
+
+**Önce**
+
+> Bu projede çalışırken aşağıdaki kurallara dikkat edilmelidir:
+>
+> - Yeni bir feature modülü eklenirken mevcut modül yapısı incelenmeli ve aynı pattern takip edilmelidir.
+> - ViewModel'lerde state yönetimi için Contract pattern kullanılması tercih edilmelidir.
+> - Test yazarken mümkün olduğunca mock kullanılmaması önerilir.
+> - Commit atmadan önce ktlint çalıştırılması faydalı olacaktır.
+
+**Sonra**
+
+> Bu projede şu kurallara uy:
+>
+> - Yeni bir özellik modülü eklerken var olan modül yapısını izle.
+> - ViewModel'de durum yönetimi için Contract kalıbını kullan.
+> - Testte mock yerine fake kullan.
+> - Commit'ten önce `ktlint` çalıştır.
+
+Kurallar: 3.1 (emir kipi), kip merdiveni (`-melidir` → emir, `önerilir` ve `faydalı olacaktır` → emir), 3.3 (edilgen çatı etken oldu), 1.7 (`feature` → `özellik`, `pattern` → `kalıp`).
+
+Kazanılan: dört maddenin dördü de yönerge oldu. `-melidir`, `önerilir` ve `faydalı olacaktır` üç ayrı zorunluluk derecesi gibi okunur. Bir ajan bunları atlar. Ajan yönergesi tek bir okura seslenir, bu yüzden ikinci tekil doğaldır. Kural 10.1 kipin tek olmasını ister, hangi kip olduğunu değil.
+
+---
+
+## 3. Kök neden açıklaması (prosedürel)
+
+**Önce**
+
+> Testin fail olmasının sebebi büyük ihtimalle coroutine scopeunun test dispatcher ile düzgün bir şekilde handle edilememesinden kaynaklanıyor olabilir. `runTest` bloğu içerisinde `viewModelScope` kullanıldığında, dispatcherın inject edilmemesi durumunda testin main threadi beklemesi söz konusu olabilmektedir. Bu tarz durumlarda genellikle `MainDispatcherRule` eklenmesi tavsiye edilmektedir. Ayrıca `advanceUntilIdle()` çağrısının da eklenmesi faydalı olabilir.
+
+**Sonra**
+
+> Test, `viewModelScope` içindeki işi beklemeden bitti. `viewModelScope`, `Dispatchers.Main` kullanır. Testte bu dispatcher yok.
+>
+> İki değişiklik gerekir:
+>
+> 1. Test sınıfına `MainDispatcherRule` ekleyin.
+> 2. Doğrulamadan önce `advanceUntilIdle()` çağırın.
+>
+> Bunu çalıştırıp doğrulamadım. Testi çalıştırın, sonucu paylaşın.
+
+Kurallar: 3.2 (`olabilmektedir` → `yok`), 9.4 (`scopeunun` → `viewModelScope`, `dispatcherın` → `dispatcher`), 4.1, 5.2 (emir kipi).
+
+Kazanılan: sahte belirsizlik gitti. Soldaki metin `büyük ihtimalle`, `olabilir`, `söz konusu olabilmektedir`, `genellikle` ve `faydalı olabilir` ile beş yere belirsizlik serpiştirir. Sağdaki metin mekanizmayı kesin anlatır ve tek gerçek belirsizliği son cümlede adlandırır: yazar bunu çalıştırmadı.
+
+---
+
+## 4. PR açıklaması (açıklayıcı)
+
+**Önce**
+
+> ## Açıklama
+> Bu PR ile birlikte ödeme akışında yaşanan timeout sorunlarının giderilmesi amaçlanmaktadır. Mevcut implementasyonda retry mekanizması bulunmadığından dolayı, network kaynaklı geçici hatalarda kullanıcıların ödeme işlemini tamamlayamadığı gözlemlenmiştir.
+>
+> ## Yapılan Değişiklikler
+> - `PaymentsRepositoryImpl` içerisine exponential backoff ile retry logic eklenmiştir.
+> - Timeout süresi 10 saniyeden 30 saniyeye çıkarılmıştır.
+> - İlgili unit testler yazılmıştır.
+>
+> ## Test
+> Lokalde test edilmiş olup herhangi bir sorun ile karşılaşılmamıştır.
+
+**Sonra**
+
+> ## Sorun
+> Ödeme isteği, ağ hatasında yeniden denemedi. Kullanıcı ödemeyi tamamlayamadı.
+>
+> ## Değişiklik
+> - `PaymentsRepositoryImpl` artık üstel geri çekilmeyle yeniden dener.
+> - Zaman aşımı 10 saniyeden 30 saniyeye çıktı.
+> - `PaymentsRepositoryImplTest` yeni testler aldı.
+>
+> ## Doğrulama
+> Birim testleri geçti. Ağ hatasını cihazda uçak moduyla denedim. Ödeme, ikinci denemede tamamlandı.
+
+Kurallar: 3.8 (`eklenmiştir` → `dener`), 1.8 (`giderilmesi amaçlanmaktadır` → sorunu yaz), 3.3 (`gözlemlenmiştir` → `tamamlayamadı`), 1.7 (`timeout` → `zaman aşımı`).
+
+Kazanılan: "Lokalde test edilmiş olup herhangi bir sorun ile karşılaşılmamıştır" cümlesi neyin denendiğini gizler. Bu cümlenin düzeltmesi kelime seçimi değildir. Eksik olgu yazarın elindedir: neyi, nasıl denedin? Elinde yoksa ne yaptıysan onu yaz.
+
+---
+
+## 5. Kod inceleme yorumu (prosedürel)
+
+**Önce**
+
+> Bu kısımda null check yapılmasının faydalı olabileceğini düşünüyorum. Ayrıca `!!` operatörünün kullanımından kaçınılması genel olarak önerilmektedir. Belki `?.let` bloğu ile handle edilmesi daha uygun olabilir. Ne düşünürsünüz?
+
+**Sonra**
+
+> `user!!` satırı, oturum kapanınca çöker. `logout()` çağrısı `user` alanını `null` yapar.
+>
+> `user?.let { }` kullanın. Ya da erken dönün: `val u = user ?: return`.
+
+Kurallar: 1.8 (`null check yapılmasının` → `çöker`), kip merdiveni (`faydalı olabileceğini düşünüyorum`, `önerilmektedir`, `belki`, `olabilir` silindi), 5.2 (emir kipi).
+
+Kazanılan: yorum artık bir gözlem değil, bir bulgu. Soldaki metin dört katmanlı nezaketin altına gerçek hatayı gömer: kod çöküyor. Sağdaki metin önce çökmeyi, sonra nedenini, sonra iki çözümü verir.
+
+---
+
+## 6. Olay raporu (açıklayıcı)
+
+**Önce**
+
+> Bazı kullanıcılarımızın uygulamaya giriş yapmasında yaşanabilecek bir sorun tespit edilmiş olup, ekiplerimiz tarafından konu ile ilgili gerekli çalışmalar ivedilikle başlatılmıştır. Yaşanan mağduriyetten dolayı özür dileriz.
+
+**Sonra**
+
+> 09:14 ile 09:52 arasında Android istemcide oturum açma isteklerinin %38'i başarısız oldu. 09:10'daki yapılandırma değişikliği, token yenileme adresini eskisiyle değiştirdi. Değişikliği 09:48'de geri aldık. Yapılandırma değişikliklerine kanarya dağıtımı ekledik.
+
+Kurallar: 3.8 (`başlatılmıştır` → `ekledik`), 3.4 (`tarafından` silindi), 3.3 (edilgen çatı etken oldu), şişkinlik (`ilgili`, `gerekli`, `ivedilikle`).
+
+Kazanılan: soldaki metin kaç kişinin, ne kadar süre, neden etkilendiğini söylemez. Sağdaki metin dördünü de söyler. Sayılar kaynaktan gelir. Kaynakta yoksa uydurulmaz, genel ifade genel kalır.

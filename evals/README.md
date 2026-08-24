@@ -59,17 +59,17 @@ Hiçbir araç dil uygunluğunu garanti edemez. Son onay yazarındır.
 python3 evals/ornek_olc.py
 ```
 
-| Örnek | Önce (ihlal/100 kelime) | Sonra | En uzun cümle |
-|---|---|---|---|
-| README girişi | 25.00 | 0.00 | 18 → 10 |
-| Kurulum | 17.24 | 0.00 | 15 → 7 |
-| Hata mesajı | 13.64 | 0.00 | 10 → 8 |
-| Olay raporu | 13.04 | 0.00 | 18 → 8 |
-| Sürüm notu | 15.00 | 0.00 | 20 → 7 |
-| Commit ve PR | 12.00 | 0.00 | 17 → 12 |
-| **Toplam** | **16.77** | **0.00** | 26 ihlal → 0 ihlal |
+| Örnek | Tür | Önce (ihlal/100 kelime) | Sonra | En uzun cümle: önce → sonra |
+|---|---|---|---|---|
+| 1. Ajanın değişiklik özeti (açıklayıcı) | aciklayici | 14.44 | 0.0 | 28 → 7 |
+| 2. Ajan yönergesi, `AGENTS.md` veya `CLAUDE.md` (prosedürel) | prosedurel | 12.5 | 0.0 | 14 → 10 |
+| 3. Kök neden açıklaması (prosedürel) | prosedurel | 18.37 | 0.0 | 18 → 6 |
+| 4. PR açıklaması (açıklayıcı) | aciklayici | 14.04 | 0.0 | 15 → 7 |
+| 5. Kod inceleme yorumu (prosedürel) | prosedurel | 7.41 | 0.0 | 9 → 6 |
+| 6. Olay raporu (açıklayıcı) | aciklayici | 12.0 | 0.0 | 20 → 12 |
+| **Toplam** | | **13.85** | **0.0** | **%100.0 düşüş** |
 
-**Bu sayı ne anlatır, ne anlatmaz.** Ölçüm, elle yazılmış örnek metinleri ölçer. Örnekler zaten kurallara uyacak biçimde yazıldı, bu yüzden sıfır sonucu beklenen sonuçtur. Sayı, kuralların ölçülebilir olduğunu ve denetleyicinin çalıştığını gösterir. **Modelin davranışı hakkında hiçbir şey söylemez.**
+**Bu sayı ne anlatır, ne anlatmaz.** Ölçüm, elle yazılmış örnek metinleri ölçer. Örnekler kurallara uyacak biçimde elle yazıldı, bu yüzden sıfır sonucu beklenen sonuçtur. Sayı, kuralların ölçülebilir olduğunu ve denetleyicinin çalıştığını gösterir. **Modelin davranışı hakkında hiçbir şey söylemez.**
 
 ## Model karşılaştırması
 

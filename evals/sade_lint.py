@@ -121,6 +121,10 @@ def kodu_ayikla(metin):
     metin = re.sub(r"```.*?```", " ", metin, flags=re.S)
     metin = re.sub(r"`[^`\n]+`", " KOD ", metin)      # Kural 8.2: tek kelime
     metin = re.sub(r"^#+\s.*$", " ", metin, flags=re.M)  # başlıklar muaf
+    # Markdown tablosu: ayraç satırı atılır, her hücre kendi metin birimidir.
+    metin = re.sub(r"^\s*\|[\s:|-]*\|\s*$", " ", metin, flags=re.M)
+    metin = re.sub(r"^\s*\|(.*)\|\s*$",
+                   lambda m: m.group(1).replace("|", ". ") + ".", flags=re.M, string=metin)
     metin = re.sub(r"https?://\S+", " ADRES ", metin)
     return metin
 
